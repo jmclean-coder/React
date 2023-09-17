@@ -4,5 +4,7 @@
 
 ### 09/23 
 - Created Repo
+- Created .gitignore
+
 
 
