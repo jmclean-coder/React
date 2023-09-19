@@ -1,7 +1,7 @@
 import Expenses from "./components/Expenses";
 
 // our first component in action, the App component
-function App() {
+export default function App() {
   const expensesData = [
     {
       id: "e1",
@@ -9,7 +9,12 @@ function App() {
       amount: 94.12,
       date: new Date(2023, 7, 14),
     },
-    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: "e2",
+      title: "New TV",
+      amount: 799.49,
+      date: new Date(2023, 2, 12),
+    },
     {
       id: "e3",
       title: "Car Insurance",
@@ -30,5 +35,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
