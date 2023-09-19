@@ -1,3 +1,4 @@
+// our first component in action, the App component
 function App() {
   return (
     <div>
