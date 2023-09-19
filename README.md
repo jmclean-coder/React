@@ -2,9 +2,10 @@
 
 ## ChangeLog 
 
-### 09/23 
+### 09/16 
 - Created Repo
 - Created .gitignore
-
+### 09/18
+- Setup starter project
 
 
