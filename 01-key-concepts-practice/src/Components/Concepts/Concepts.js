@@ -4,7 +4,7 @@ const Concepts = ({ conceptsData }) => {
 
     const renderConceptItems = () => {
         return conceptsData.map( conceptData => {
-            return <ConceptItem />
+            return <ConceptItem key={conceptData.id} title={conceptData.title} image={conceptData.image} description={conceptData.description} />
         })
     }
 
