@@ -2,7 +2,7 @@ import Card from 'components/UI/Card';
 import ExpenseItem from 'components/Expenses/FeatureComponents/ExpenseItem/ExpenseItem';
 import './Expenses.css';
 
-export default function Expenses({ expensesData }) {
+const Expenses = ({ expensesData }) => {
   function renderExpenseItems() {
     return expensesData.map((expenseItem) => {
         return <ExpenseItem
@@ -19,3 +19,4 @@ export default function Expenses({ expensesData }) {
     </Card>
   );
 }
+export default Expenses;

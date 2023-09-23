@@ -1,7 +1,7 @@
 import Expenses from "./components/Expenses/Expenses"
 
 // our first component in action, the App component
-export default function App() {
+const App = () => {
   const expensesData = [
     {
       id: "e1",
@@ -35,3 +35,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
