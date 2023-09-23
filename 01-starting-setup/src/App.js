@@ -1,4 +1,4 @@
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses"
 
 // our first component in action, the App component
 export default function App() {

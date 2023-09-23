@@ -1,5 +1,5 @@
-import Card from './UI/Card';
-import ExpenseDate from './ExpenseDate';
+import Card from 'components/UI/Card';
+import ExpenseDate from 'components/Expenses/FeatureComponents/ExpenseDate/ExpenseDate';
 import './ExpenseItem.css';
 
 export default function ExpenseItem(props) {
