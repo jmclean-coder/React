@@ -1,4 +1,4 @@
-import ConceptItem from "./ConceptItem/ConceptItem";
+import ConceptItem from "components/Concepts/ConceptItem/ConceptItem";
 
 const Concepts = ({ conceptsData }) => {
 
