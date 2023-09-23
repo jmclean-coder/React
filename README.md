@@ -12,3 +12,6 @@
 ### 9/22
 - Refactor starter project
 - Begin OMO practice 1
+
+### 9/23
+- Finish OMO practice 1
