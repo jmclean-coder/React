@@ -31,13 +31,13 @@ const Expenses = ({ expensesData }) => {
     setFilteredYear(selectedYear)
   }
   const renderExpenseItems = () => {
-    return expensesData.map((expenseItem) => {
+    return expensesData.map((expense) => {
       return (
         <ExpenseItem
-          key={expenseItem.id}
-          title={expenseItem.title}
-          amount={expenseItem.amount}
-          date={expenseItem.date}
+          key={expense.id}
+          title={expense.title}
+          amount={expense.amount}
+          date={expense.date}
         />
       );
     });
