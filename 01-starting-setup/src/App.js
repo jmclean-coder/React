@@ -1,5 +1,5 @@
 import NewExpense from "components/NewExpense/FeatureComponents/NewExpense/NewExpense";
-import Expenses from "components/Expenses/Expenses"
+import Expenses from "components/Expenses/Expenses";
 
 // our first component in action, the App component
 const App = () => {
@@ -29,9 +29,13 @@ const App = () => {
       date: new Date(2023, 5, 12),
     },
   ];
+
+  const addExpenseHandler = expense => {
+    console.log("Hi from App.js!", expense);
+  }
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expensesData={expensesData} />
     </div>
   );
