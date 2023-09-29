@@ -6,16 +6,16 @@ import { useState } from "react";
 
 const Expenses = ({ expensesData }) => {
   const [filteredYear, setFilteredYear] = useState("2020");
-  // typically we don't want to set a second state action that is the inverse of or dependent on on another state action
+  let expensesContent = <p> No expenses found.</p>
 
   const handleFilterChange = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
 
-  const filteredResults = expensesData.filter((expense) => expense.date.getFullYear().toString() === filteredYear);
+  const filteredResults = expensesData.filter(expense => expense.date.getFullYear().toString() === filteredYear);
 
-  const renderExpenseItems = () => {
-    return filteredResults.map((expense) => {
+  if (filteredResults.length) {
+    expensesContent = filteredResults.map((expense) => {
       return (
         <ExpenseItem
           key={expense.id}
@@ -34,7 +34,7 @@ const Expenses = ({ expensesData }) => {
           selected={filteredYear}
           onChangeFilter={handleFilterChange}
         />
-        {renderExpenseItems()}
+        {expensesContent}
       </Card>
     </div>
   );
