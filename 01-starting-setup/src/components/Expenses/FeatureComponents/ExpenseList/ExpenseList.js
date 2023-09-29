@@ -3,7 +3,6 @@ import ExpenseItem from "components/Expenses/FeatureComponents/ExpenseItem/Expen
 
 
 const ExpenseList = ({ filteredResults }) => {
-  console.log("render!");
 
   if (filteredResults.length === 0) {
     return <h2 className="expenses-list__fallback">No expenses found.</h2>;
