@@ -22,12 +22,12 @@ const DUMMY_EXPENSES = [
     amount: 157.99,
     date: new Date(2021, 6, 14),
   },
-  {
-    id: "e4",
-    title: "New TV",
-    amount: 799.49,
-    date: new Date(2022, 2, 12),
-  },
+  // {
+  //   id: "e4",
+  //   title: "New TV",
+  //   amount: 799.49,
+  //   date: new Date(2022, 2, 12),
+  // },
   {
     id: "e5",
     title: "Car Insurance",
