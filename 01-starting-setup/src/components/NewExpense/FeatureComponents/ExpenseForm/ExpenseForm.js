@@ -50,7 +50,7 @@ const ExpenseForm = ({onSaveExpenseData, onCancel}) => {
         };
 
         onSaveExpenseData(submittedData);
-        showExpenseFormHandler();
+        onCancel();
         setFormData({
             inputAmount: '',
             inputDate: '',
