@@ -37,3 +37,4 @@
     - Then we use a conditional to determine if we update that variable with the result of out filter data
 
 ### 9/29
+- finished filtering and conditional rendering for expense tracker.
