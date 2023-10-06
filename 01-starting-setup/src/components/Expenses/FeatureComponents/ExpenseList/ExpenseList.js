@@ -2,15 +2,15 @@ import "./ExpenseList.css";
 import ExpenseItem from "components/Expenses/FeatureComponents/ExpenseItem/ExpenseItem";
 
 
-const ExpenseList = ({ filteredResults }) => {
+const ExpenseList = ({ filteredExpenses }) => {
 
-  if (filteredResults.length === 0) {
+  if (filteredExpenses.length === 0) {
     return <h2 className="expenses-list__fallback">No expenses found.</h2>;
   }
 
   return (
     <ul className="expenses-list">
-      {filteredResults.map((expense) => (
+      {filteredExpenses.map((expense) => (
         <ExpenseItem
           key={expense.id}
           title={expense.title}
