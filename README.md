@@ -38,3 +38,6 @@
 
 ### 9/29
 - finished filtering and conditional rendering for expense tracker.
+
+### 10/6
+- Complete condition challenge: hiding the form.
