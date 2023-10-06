@@ -94,7 +94,7 @@ const ExpenseForm = ({onSaveExpenseData, showExpenseFormHandler}) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button onClick={showExpenseFormHandler}>Cancel</button>
+        <button type="button" onClick={showExpenseFormHandler}>Cancel</button>
         <button
         type="submit">Add Expense</button>
       </div>
