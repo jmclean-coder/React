@@ -42,3 +42,6 @@
 ### 10/6
 - Complete condition challenge: hiding the form.
 - Build out the ExpenseChart Viewer
+
+### 10/9
+- Started the styling section of my react review.
