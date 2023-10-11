@@ -45,3 +45,11 @@
 
 ### 10/9
 - Started the styling section of my react review.
+
+### 10/10
+- Worked on dynamic styles, and install styled components.
+
+### 10/11
+- Finished styled components examples
+- Finished styled components props example
+- Started css modules example
