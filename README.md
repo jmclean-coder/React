@@ -53,3 +53,6 @@
 - Finished styled components examples
 - Finished styled components props example
 - Started css modules example
+
+### 11/6
+- Course Updated 10/23 and related content moved to legacy folder.
