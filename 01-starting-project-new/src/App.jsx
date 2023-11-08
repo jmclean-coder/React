@@ -1,4 +1,5 @@
 // import React from "react"; Not necessary to explicitly import react.
+import { useState } from "react"
 import { CORE_CONCEPTS } from "./data";
 import CoreConceptCard from "./components/CoreConceptCard/CoreConceptCard";
 import Header from "./components/UI/Header/Header";
@@ -6,13 +7,13 @@ import TabButton from "./components/UI/TabButton/TabButton";
 
 const firstConcept = CORE_CONCEPTS[0];
 function App() {
-  // console.log('App component rendering');
-  let tabContent = 'Please click a button'
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
+  console.log('App component rendering');
 
   function handleSelect(selectedButton) {
     // console.log(`Hello from ${selectedButton} button World!!`);
-    tabContent = selectedButton
-    // console.log(tabContent);
+    setSelectedTopic(selectedButton)
+    console.log(selectedTopic);
   }
   return (
     <div>
@@ -37,12 +38,21 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
-            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
+            <TabButton onSelect={() => handleSelect('Components')}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect('JSX')}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
           </menu>
-          {tabContent}
+          <div id='tab-content'>
+            <h3></h3>
+            <p></p>
+            <pre>
+              <code>
+
+              </code>
+            </pre>
+          </div>
+          {/* {selectedTopic} */}
         </section>
       </main>
     </div>
