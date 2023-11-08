@@ -1,18 +1,21 @@
 // import React from "react"; Not necessary to explicitly import react.
-import { useState } from "react"
-import { CORE_CONCEPTS } from "./data";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useState } from "react";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import CoreConceptCard from "./components/CoreConceptCard/CoreConceptCard";
 import Header from "./components/UI/Header/Header";
 import TabButton from "./components/UI/TabButton/TabButton";
+import CodeBlock from "./components/UI/CodeBlock/CodeBlock";
 
-const firstConcept = CORE_CONCEPTS[0];
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
-  console.log('App component rendering');
+  console.log("App component rendering");
+  const [selectedTopic, setSelectedTopic] = useState("components");
+  const firstConcept = CORE_CONCEPTS[0];
+  const { title, description, code } = EXAMPLES[selectedTopic];
 
   function handleSelect(selectedButton) {
     // console.log(`Hello from ${selectedButton} button World!!`);
-    setSelectedTopic(selectedButton)
+    setSelectedTopic(selectedButton);
     console.log(selectedTopic);
   }
   return (
@@ -38,19 +41,17 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect('Components')}>Components</TabButton>
-            <TabButton onSelect={() => handleSelect('JSX')}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          <div id='tab-content'>
-            <h3></h3>
-            <p></p>
-            <pre>
-              <code>
-
-              </code>
-            </pre>
+          <div id="tab-content">
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <CodeBlock theme={a11yDark} code={code} />
           </div>
           {/* {selectedTopic} */}
         </section>
