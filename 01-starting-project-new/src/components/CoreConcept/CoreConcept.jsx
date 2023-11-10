@@ -1,4 +1,4 @@
-import CoreConceptCard from "./components/CoreConceptCard/CoreConceptCard";
+import CoreConceptCard from "../CoreConceptCard/CoreConceptCard"
 import { CORE_CONCEPTS } from "../../data";
 
 export default function CoreConcept() {
