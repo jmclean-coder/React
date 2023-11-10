@@ -1,19 +1,20 @@
 // import React from "react"; Not necessary to explicitly import react.
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useState } from "react";
-import { CORE_CONCEPTS, EXAMPLES } from "./data";
-import CoreConceptCard from "./components/CoreConceptCard/CoreConceptCard";
+import { EXAMPLES } from "./data";
+import CoreConcept from "./components/CoreConcept/CoreConcept";
 import Header from "./components/UI/Header/Header";
 import TabButton from "./components/UI/TabButton/TabButton";
 import CodeBlock from "./components/UI/CodeBlock/CodeBlock";
 
 function App() {
   console.log("App component rendering");
+  // states
   const [selectedTopic, setSelectedTopic] = useState("");
   // const firstConcept = CORE_CONCEPTS[0];
 
+  //conditional content
   let tabContent = <p>Please select a topic</p>;
-
   if (selectedTopic) {
     const { title, description, code } = EXAMPLES[selectedTopic];
 
@@ -26,11 +27,8 @@ function App() {
     );
   }
 
-  function renderConceptCards() {
-    return CORE_CONCEPTS.map((concept) => {
-      return <CoreConceptCard {...concept} key={concept.title}/>
-    });
-  }
+  //functions
+
 
   function handleSelect(selectedButton) {
     // console.log(`Hello from ${selectedButton} button World!!`);
@@ -38,26 +36,10 @@ function App() {
     console.log(selectedTopic);
   }
   return (
-    <div>
+    <>
       <Header />
       <main>
-        <section id="core-concepts">
-          <h2>Core Concepts</h2>
-          <ul>
-            {/* note on approach... common method */}
-            {/* <CoreConceptCard
-              image={firstConcept.image}
-              title={firstConcept.title}
-              description={firstConcept.description}
-            /> */}
-
-            {/* shortened method using rest */}
-            {/* <CoreConceptCard {...CORE_CONCEPTS[1]} />
-            <CoreConceptCard {...CORE_CONCEPTS[2]} />
-            <CoreConceptCard {...CORE_CONCEPTS[3]} /> */}
-            {renderConceptCards()}
-          </ul>
-        </section>
+        <CoreConcept />
         <section id="examples">
           <h2>Examples</h2>
           <menu>
@@ -87,10 +69,9 @@ function App() {
             </TabButton>
           </menu>
           {tabContent}
-          {/* {selectedTopic} */}
         </section>
       </main>
-    </div>
+    </>
   );
 }
 
