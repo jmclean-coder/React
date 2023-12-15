@@ -5,7 +5,7 @@ import Examples from "./components/Examples/Examples";
 import Header from "./components/UI/Header/Header";
 
 function App() {
-  console.log("App component rendering");
+  // console.log("App component rendering");
   return (
     <>
       <Header />
