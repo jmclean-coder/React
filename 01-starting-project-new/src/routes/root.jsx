@@ -1,3 +1,5 @@
+import { Outlet, Link } from "react-router-dom";
+
 export default function Root() {
     return (
       <>
@@ -7,7 +9,7 @@ export default function Root() {
           <nav>
             <ul>
               <li>
-                <a href={`/react-essentials`}>React Essentials</a>
+                <Link to={`react-essentials`}>React Essentials</Link>
               </li>
               {/* <li>
                 <a href={`/contacts/2`}>Your Friend</a>
@@ -16,7 +18,9 @@ export default function Root() {
           </nav>
         </div>
 
-        <div id="detail"></div>
+        <div id="detail">
+            <Outlet />
+        </div>
       </>
     );
   }
