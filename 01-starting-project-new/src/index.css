@@ -17,19 +17,48 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  /* min-height: 80rem; */
+  /* min-height: 80rem; */ /* needed? */
 }
 
-html, body {
+html,
+body {
+  height: 100%;  /* needed? */
+  margin: 0;
   line-height: 1.5;
   color: #ebe7ef;
   background: radial-gradient(#280a48, #20043d);
-  height: 100%;
 }
+
+
+/* UI Shell */
+#root {
+  /* flex-direction: column; */
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 22rem;
+  background-color: #0A0B48;
+  border-right: solid 1px #e3e3e3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Detail View */
+
+#detail {
+  flex: 1;
+  padding: 2rem 4rem;
+  width: 100%;
+}
+
 
 main {
   width: 90%;
-  max-width: 50rem;
+  /* max-width: 50rem; */
   margin: auto;
 }
 
