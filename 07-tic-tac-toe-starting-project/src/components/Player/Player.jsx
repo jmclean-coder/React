@@ -16,7 +16,7 @@ export default function Player({ initialName, symbol }) {
     let editablePlayerName = <span className="player-name">{playerName}</span>
 
     if (isEditing) {
-        editablePlayerName = <input type="text" value={playerName} required onChange={handleNameChange} />
+        editablePlayerName = <input type="text" value={playerName} required onChange={handleNameChange} /> // this is called two way binding.
     }
   return (
     <li>
