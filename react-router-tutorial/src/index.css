@@ -190,6 +190,7 @@ form[action$="destroy"] button {
   float: right;
   color: #eeb004;
 }
+
 #sidebar nav a.active span {
   color: inherit;
 }
