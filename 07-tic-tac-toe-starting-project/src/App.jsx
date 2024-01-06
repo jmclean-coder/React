@@ -5,7 +5,11 @@ import Log from "./components/Log/Log";
 import { WINNING_COMBINATIONS } from "./winning-combinations";
 import GameOver from "./components/GameOver/GameOver";
 
-const initialGameBoard = [
+const PLAYERS = {
+  X: 'Player 1',
+  O: 'Player 2'
+}
+const INITIAL_GAME_BOARD = [
   [null, null, null],
   [null, null, null],
   [null, null, null],
@@ -21,22 +25,9 @@ function deriveActivePlayer(gameTurns) {
   return currentPlayer
 }
 
+function deriveGameBoard(gameTurns) {
+  let gameBoard = [...INITIAL_GAME_BOARD.map(array => [...array])];
 
-function App() {
-  // const [activePlayer, setActivePlayer] = useState("X");
-  const [gameTurns, setGameTurns] = useState([]); // -----> Using a single piece of state to update multiple dependent components
-  /**
-   * instead of managing extra state,
-   * we derive the player from game turns state, which stores player info
-   */
-  const activePlayer = deriveActivePlayer(gameTurns);
-
-  const [players, setPlayers] = useState({
-    X: 'Player 1',
-    O: 'Player 2'
-});
-
-  let gameBoard = [...initialGameBoard.map(array => [...array])];
   for (const turn of gameTurns) {
       const { square, player} = turn;
       const { row, col } = square;
@@ -45,7 +36,11 @@ function App() {
 
   }
 
-  let winner = null;
+  return gameBoard;
+}
+
+function deriveWinner(gameBoard, players) {
+  let winner;
 
   /**
    * Looping step by step over all winning combinations, extract the squares
@@ -65,10 +60,22 @@ function App() {
     }
   }
 
+  return winner;
+}
+
+function App() {
+  const [gameTurns, setGameTurns] = useState([]); // -----> Using a single piece of state to update multiple dependent components
+  const [players, setPlayers] = useState(PLAYERS);
+  /**
+   * instead of managing extra state,
+   * we derive the player from game turns state, which stores player info
+   */
+  const activePlayer = deriveActivePlayer(gameTurns);
+  const gameBoard = deriveGameBoard(gameTurns);
+  const winner = deriveWinner(gameBoard, players);
   const hasDraw = gameTurns.length === 9 && !winner
 
   const handleSelectSquare = (rowIndex, colIndex) => {
-
     setGameTurns((prevTurns) => {
       const currentPlayer = deriveActivePlayer(prevTurns);
       const updatedTurns = [
@@ -104,13 +111,13 @@ function App() {
         {/* Players */}
         <ol id="players" className="highlight-player">
           <Player
-            initialName="Player 1"
+            initialName={PLAYERS.X}
             symbol="X"
             isActive={activePlayer === "X"}
             onChangeName={handlePlayerNameChage}
           />
           <Player
-            initialName="Player 2"
+            initialName={PLAYERS.O}
             symbol="O"
             isActive={activePlayer === "O"}
             onChangeName={handlePlayerNameChage}
