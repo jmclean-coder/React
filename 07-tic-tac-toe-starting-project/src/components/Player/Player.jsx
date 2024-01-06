@@ -1,12 +1,17 @@
 import { useState } from "react";
 
-export default function Player({ initialName, symbol }) {
+export default function Player({ initialName, symbol, isActive, onChangeName }) {
+
     const [ isEditing, setIsEditing ] = useState(false);
     const [ playerName, setPlayerName ] = useState(initialName);
 
     const handleEdit = () => {
         // when updating state based on the previous value of that state, I should pass a function to my state update.
         setIsEditing((editing) => !editing);
+
+        if (isEditing) {
+          onChangeName(symbol, playerName)
+        }
     }
 
     const handleNameChange = (event) => {
@@ -19,7 +24,7 @@ export default function Player({ initialName, symbol }) {
         editablePlayerName = <input type="text" value={playerName} required onChange={handleNameChange} /> // this is called two way binding.
     }
   return (
-    <li>
+    <li className={isActive ? 'active' : undefined}>
       <span className="player">
         {editablePlayerName}
         <span className="player-symbol">{symbol}</span>
