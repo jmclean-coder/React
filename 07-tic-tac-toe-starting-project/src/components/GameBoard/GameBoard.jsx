@@ -1,47 +1,17 @@
-export default function GameBoard() {
-
-    const initialGameBoard = [
-        [null, null, null],
-        [null, null, null],
-        [null, null, null],
-    ]
+export default function GameBoard({ onSelectSquare, board }) {
   return (
     <ol id="game-board">
-        {
-        initialGameBoard.map((row, rowIndex) => <li key={rowIndex}>
-            <ol>
-                {
-                row.map((playerSymbol, colIndex) => <li key={colIndex}>
-                    <button>{playerSymbol}</button>
-                </li>)
-                }
-            </ol>
-        </li> )
-        }
-      {/* <li>
-        <ol>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
-      </li>
-      <li>
-        <ol>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
-      </li>
-      <li>
-        <ol>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
-      </li>
-
-      This is the static way, we want to generate this structure programatically ^^^
-      */}
+      {board.map((row, rowIndex) => (
+        <li key={rowIndex}>
+          <ol>
+            {row.map((playerSymbol, colIndex) => (
+              <li key={colIndex}>
+                <button disabled={playerSymbol !== null} onClick={() => onSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
+              </li>
+            ))}
+          </ol>
+        </li>
+      ))}
     </ol>
   );
 }
