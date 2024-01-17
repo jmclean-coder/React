@@ -1,12 +1,11 @@
-import logo from './assets/investment-calculator-logo.png';
+import Header from "./components/Header/Header";
 
-function App() {
+const App = () => {
   return (
-    <header id='header'>
-      <img src={logo} alt='Investment Calculator Moneybag Logo'/>
-      <h1>React Investment Calculator</h1>
-    </header>
+    <>
+    <Header />
+    </>
   )
 }
 
-export default App
+export default App;
