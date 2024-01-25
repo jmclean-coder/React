@@ -1,56 +1,31 @@
+import InputGroup from "../InputGroup/InputGroup";
+
 const UserInput = ({ inputHandler, userInputState }) => {
+  const { initialInvestment, annualInvestment, expectedReturn, duration } =
+    userInputState;
+
+    // Honestly i'd probably go with repeating the declarations for each input group, or not even going this far into a refactor at all. Curious if this is a common pattern.
+  const renderInputGroups = () => {
+    return Object.entries(userInputState).map(([key, value]) => {
+      const derivedName = key.replace(/([a-z])([A-Z])/g, "$1 $2");
+
+      return (
+        <InputGroup
+          name={derivedName}
+          inputHandler={inputHandler}
+          value={value}
+          identifier={key}
+        />
+      );
+    });
+  };
   return (
     <section id="user-input">
-      <div className="input-group">
-        <p>
-          <label>Initial Investment</label>
-          <input
-            name="Initial Investment"
-            type="number"
-            onChange={(event) =>
-              inputHandler("initialInvestment", event.target.value)
-            }
-            value={userInputState.initialInvestment}
-          />
-        </p>
-      </div>
-      <div className="input-group">
-        <p>
-          <label>Annual Investment</label>
-          <input
-            name="Annual Investment"
-            type="number"
-            onChange={(event) =>
-              inputHandler("annualInvestment", event.target.value)
-            }
-            value={userInputState.annualInvestment}
-          />
-        </p>
-      </div>
-      <div className="input-group">
-        <p>
-          <label>Expected Return</label>
-          <input
-            name="Expected Return"
-            type="number"
-            onChange={(event) =>
-              inputHandler("expectedReturn", event.target.value)
-            }
-            value={userInputState.expectedReturn}
-          />
-        </p>
-      </div>
-      <div className="input-group">
-        <p>
-          <label>duration</label>
-          <input
-            name="duration"
-            type="number"
-            onChange={(event) => inputHandler("duration", event.target.value)}
-            value={userInputState.duration}
-          />
-        </p>
-      </div>
+      {/* <InputGroup name={'Initial Investment'} inputHandler={inputHandler} value={initialInvestment} identifier='initialInvestment'/>
+      <InputGroup name={'Annual Investment'} inputHandler={inputHandler} value={annualInvestment} identifier='annualInvestment'/>
+      <InputGroup name={'Expected Return'} inputHandler={inputHandler} value={expectedReturn} identifier='expectedReturn'/>
+      <InputGroup name={'Duration'} inputHandler={inputHandler} value={duration} identifier='duration'/> */}
+      {renderInputGroups()}
     </section>
   );
 };
