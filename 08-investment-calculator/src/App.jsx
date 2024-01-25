@@ -10,8 +10,13 @@ const initialUserInput = {
   duration: 10,
 };
 
+
 const App = () => {
   const [userInput, setUserInput] = useState(initialUserInput);
+
+  // as long as the duration is greater than zero, call it valid,
+  // the other numbers can be negative to calculate other things like liabilities.
+  const inputIsValid = userInput.duration >= 1;
 
   const handleChange = (inputIdentifier, newValue) => {
     setUserInput((prevUserInput) => ({
@@ -26,7 +31,7 @@ const App = () => {
       <div id="user-input">
         <UserInput inputHandler={handleChange} userInputState={userInput} />
       </div>
-      <Results userInputState={userInput}/>
+      { inputIsValid ? <Results userInputState={userInput} /> : <p className='center'>Please a duration greater than 0</p> }
     </>
   );
 };
