@@ -1,32 +1,34 @@
+import { useState } from "react";
 import Header from "./components/Header/Header";
+import UserInput from "./components/UserInput/UserInput";
+import Results from "./components/Results/Results";
+
+const initialUserInput = {
+  initialInvestment: 10000,
+  annualInvestment: 1200,
+  expectedReturn: 6,
+  duration: 10,
+};
 
 const App = () => {
+  const [userInput, setUserInput] = useState(initialUserInput);
+
+  const handleChange = (inputIdentifier, newValue) => {
+    setUserInput((prevUserInput) => ({
+      ...prevUserInput,
+      [inputIdentifier]: newValue,
+    }));
+  };
+
   return (
     <>
-    <Header />
-    <div id='user-input'>
-      <div className='input-group'>
-      <label>Initial Invesment</label>
-      <input type="number"></input>
+      <Header />
+      <div id="user-input">
+        <UserInput inputHandler={handleChange} userInputState={userInput} />
       </div>
-
-      <div className='input-group'>
-      <label>Annual Investment</label>
-      <input type="number"></input>
-      </div>
-
-      <div className='input-group'>
-      <label>Expected Return</label>
-      <input type="number"></input>
-      </div>
-
-      <div className='input-group'>
-      <label>Duration</label>
-      <input type="number"></input>
-      </div>
-    </div>
+      <Results />
     </>
-  )
-}
+  );
+};
 
 export default App;
