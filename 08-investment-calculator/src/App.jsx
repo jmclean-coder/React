@@ -16,7 +16,7 @@ const App = () => {
   const handleChange = (inputIdentifier, newValue) => {
     setUserInput((prevUserInput) => ({
       ...prevUserInput,
-      [inputIdentifier]: newValue,
+      [inputIdentifier]: +newValue, //adding this plus will convert the new value back to a number
     }));
   };
 
@@ -26,7 +26,7 @@ const App = () => {
       <div id="user-input">
         <UserInput inputHandler={handleChange} userInputState={userInput} />
       </div>
-      <Results />
+      <Results userInputState={userInput}/>
     </>
   );
 };
