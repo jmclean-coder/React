@@ -30,6 +30,7 @@ const Results = ({ userInputState }) => {
             yearData.annualInvestment * yearData.year -
             initialInvestment;
           const totalAmountInvested = yearData.valueEndOfYear - totalInterest;
+
           return (
             <tr key={yearData.year}>
               <td>{yearData.year}</td>
