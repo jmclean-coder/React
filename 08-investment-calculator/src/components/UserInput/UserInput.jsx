@@ -1,8 +1,8 @@
 import InputGroup from "../InputGroup/InputGroup";
 
 const UserInput = ({ inputHandler, userInputState }) => {
-  const { initialInvestment, annualInvestment, expectedReturn, duration } =
-    userInputState;
+  // const { initialInvestment, annualInvestment, expectedReturn, duration } =
+  //   userInputState;
 
     // Honestly i'd probably go with repeating the declarations for each input group, or not even going this far into a refactor at all. Curious if this is a common pattern.
   const renderInputGroups = () => {
