@@ -16,7 +16,7 @@ const App = () => {
   const handleChange = (inputIdentifier, newValue) => {
     setUserInput((prevUserInput) => ({
       ...prevUserInput,
-      [inputIdentifier]: +newValue, //adding this plus will convert the new value back to a number
+      [inputIdentifier]: +newValue, // adding this plus returns the numerical representation of the string
     }));
   };
 
