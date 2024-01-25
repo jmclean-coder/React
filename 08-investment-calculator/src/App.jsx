@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Header from "./components/Header/Header";
 import UserInput from "./components/UserInput/UserInput";
 import Results from "./components/Results/Results";
 
@@ -27,7 +26,6 @@ const App = () => {
 
   return (
     <>
-      <Header />
       <div id="user-input">
         <UserInput inputHandler={handleChange} userInputState={userInput} />
       </div>
