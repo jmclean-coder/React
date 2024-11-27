@@ -2,6 +2,8 @@
 
 I made this playground to deepen my knowledge with React through applied examples, continuous learning, and daily practice.
 
+Fun fact: I wrote a bash script to automatically update this changelog after each commit to the repo!
+
 ## Changelog
 
 This changelog is a summary of development for the code content with my React playground
@@ -153,6 +155,7 @@ This changelog is a summary of development for the code content with my React pl
 
 - Rename completed project folders
 - Updated changelog!
+
 ### 11/27/2024
-- testing post commit message
+- Update Changelog to auto update
 
