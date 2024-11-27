@@ -1,10 +1,7 @@
 ---
-title: README
+title: ReactInvestMentCalc-README
 ---
-
 # React Investment Calculator
-
-/
 
 This project is a simple investment calculator built with React. It allows users to input their initial investment, annual investment, expected return rate, and investment duration to calculate the growth of their investment over time.
 
