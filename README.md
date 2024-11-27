@@ -153,3 +153,6 @@ This changelog is a summary of development for the code content with my React pl
 
 - Rename completed project folders
 - Updated changelog!
+### 11/27/2024
+- testing post commit message
+
