@@ -5,6 +5,7 @@ const UserInput = ({ inputHandler, userInputState }) => {
         <p>
           <label>Initial Investment</label>
           <input
+            min="1"
             name="Initial Investment"
             type="number"
             onChange={(event) =>
@@ -18,6 +19,7 @@ const UserInput = ({ inputHandler, userInputState }) => {
         <p>
           <label>Annual Investment</label>
           <input
+            min="1"
             name="Annual Investment"
             type="number"
             onChange={(event) =>
@@ -44,6 +46,7 @@ const UserInput = ({ inputHandler, userInputState }) => {
         <p>
           <label>duration</label>
           <input
+            min="1"
             name="duration"
             type="number"
             onChange={(event) => inputHandler("duration", event.target.value)}
