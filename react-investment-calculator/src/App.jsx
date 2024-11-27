@@ -10,7 +10,6 @@ const initialUserInput = {
   duration: 10,
 };
 
-
 const App = () => {
   const [userInput, setUserInput] = useState(initialUserInput);
 
@@ -19,10 +18,12 @@ const App = () => {
   const inputIsValid = userInput.duration >= 1;
 
   const handleChange = (inputIdentifier, newValue) => {
-    setUserInput((prevUserInput) => ({
-      ...prevUserInput,
-      [inputIdentifier]: +newValue, // adding this plus returns the numerical representation of the string
-    }));
+    if (!isNaN(newValue) && newValue.trim() !== "") {
+      setUserInput((prevUserInput) => ({
+        ...prevUserInput,
+        [inputIdentifier]: +newValue, // adding this plus returns the numerical representation of the string
+      }));
+    }
   };
 
   return (
@@ -31,7 +32,11 @@ const App = () => {
       <div id="user-input">
         <UserInput inputHandler={handleChange} userInputState={userInput} />
       </div>
-      { inputIsValid ? <Results userInputState={userInput} /> : <p className='center'>Please a duration greater than 0</p> }
+      {inputIsValid ? (
+        <Results userInputState={userInput} />
+      ) : (
+        <p className="center">Please a duration greater than 0</p>
+      )}
     </>
   );
 };
